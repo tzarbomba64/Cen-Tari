@@ -1,0 +1,13 @@
+eggBASE.mod[start]
+ nonR == ng6720001239493.5028503643.39587203/core
+ function.decrypt/nonR
+  key '68294587204829470028401131947329498909094792074090027483843', host = port/5664
+   let; network.file
+    if; port ON can = SIGNAL1/alert
+     then block; 'user'
+      message; "Unsecure connection: This connection has been associated with a botnet or other unsecure source,"
+       SentinelCode: "60tx119"
+        and trigger; warn.security.server.host/9dej38Jijd83Ijd_md8jJd8wj
+        send; warn1/risk
+
+        end.egg.base.mod[end]
