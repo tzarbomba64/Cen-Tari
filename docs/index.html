@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cen-Tari IDE</title>
+  <style>
+    body { background: #121212; color: #fff; font-family: monospace; }
+    #editor, #terminal, #output { width: 100%; height: 200px; margin: 10px 0; }
+    .toolbar, .tabs { display: flex; gap: 10px; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <button onclick="package()">Package</button>
+    <button onclick="patch()">Patch</button>
+    <button onclick="build()">Build</button>
+    <button onclick="toggleLog()">Log</button>
+    <button onclick="execute()">Execute</button>
+    <button onclick="addVariable()">Variable</button>
+  </div>
+  <div class="tabs">
+    <button onclick="showTab('ide')">IDE</button>
+    <button onclick="showTab('terminal')">Terminal</button>
+  </div>
+  <textarea id="editor" placeholder="Write Cen-Tari code here..."></textarea>
+  <div id="terminal" style="display:none;"></div>
+  <div id="output"></div>
+  <script>
+    function showTab(tab) {
+      document.getElementById('terminal').style.display = tab === 'terminal' ? 'block' : 'none';
+      document.getElementById('editor').style.display = tab === 'ide' ? 'block' : 'none';
+    }
+    function package() { fetch('/run_action', { method: 'POST', body: JSON.stringify({ action: 'package', code: editor.value }) }); }
+    function patch() { fetch('/run_action', { method: 'POST', body: JSON.stringify({ action: 'patch', code: editor.value }) }); }
+    function build() { fetch('/run_action', { method: 'POST', body: JSON.stringify({ action: 'build', code: editor.value }) }); }
+    function toggleLog() { fetch('/run_action', { method: 'POST', body: JSON.stringify({ action: 'toggle_log' }) }); }
+    function execute() { fetch('/run_action', { method: 'POST', body: JSON.stringify({ action: 'execute', code: editor.value }) }); }
+    function addVariable() {
+      const name = prompt("Variable name:");
+      const value = prompt("Variable value (true/false or number):");
+      editor.value += `
+var ${name} = ${value};`;
+    }
+  </script>
+</body>
+</html>
