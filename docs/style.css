@@ -1,0 +1,11 @@
+body { margin:0; font-family: sans-serif; display:flex; flex-direction:column; height:100vh; }
+#toolbar { background:#333; padding:5px; }
+#toolbar button { margin-right:5px; color:#fff; background:#555; border:none; padding:5px 10px; cursor:pointer;}
+#tabs { display:flex; }
+.tab-button { flex:1; padding:10px; cursor:pointer; background:#eee; border:none; }
+.tab-button.active { background:#ddd; }
+.tab { flex:1; display:none; padding:10px; }
+.tab.active { display:block; }
+#editor { width:100%; height:60vh; font-family: monospace; }
+#output { margin-top:10px; border:1px solid #ccc; height:20vh; overflow:auto; }
+#terminal { background:black; color:lime; height:90%; overflow:auto; }
