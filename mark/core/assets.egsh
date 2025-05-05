@@ -1,0 +1,25 @@
+egg[core.start]
+core.assets/pack
+  syntax()
+  core.function; 'ready'
+(
+  library.t498Hdi93_9jHksdi92.egg == libT4
+  ); lib.egg.access
+  run; libT4
+syntax.cost $/% == run
+(
+ library.3tri.egg == libT3
+ ); lib.tri3.access
+ if 'libT4' == FALSE
+  then
+  run; libT3
+  else
+  run START*
+  syntax()
+  core.function; 'note55'
+  (
+   s-tet.run.imp/G5
+    library.lecture.egg == libT2
+    )
+    run; libT2
+  egg[core]
